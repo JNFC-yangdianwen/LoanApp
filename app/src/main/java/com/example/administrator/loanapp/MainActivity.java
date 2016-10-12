@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
    private WebView webView;
     private static final String TAG = "MainActivity";
     //http://bk.0531center.com/
-    private static  final String WEBURL="http://bk.0531center.com/";
+    private static  final String WEBURL="http://gy.0531center.com/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.wv);
         //webview支持js
         webView.getSettings().setJavaScriptEnabled(true);
+        WebSettings webSettings= webView.getSettings();
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         webView.loadUrl(WEBURL);
         //在webview中打开一个新的页面
         webView.setWebViewClient(new WebViewClient() {
