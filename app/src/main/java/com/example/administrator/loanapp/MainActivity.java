@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
              }
                 return false;
         }});
+
 }
     ///重写webview 的onKeyDown方法覆盖系统的onKeyDown方法
     public boolean onKeyDown(int keyCode, KeyEvent event) {
